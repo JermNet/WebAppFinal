@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Session</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container mt-5 p-4 rounded shadow-sm form-container">
+  <h2 class="mb-4 text-center">Delete Session</h2>
+  <p class="text-center">Are you sure you want to delete the following session?</p>
+  <div class="mb-4">
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>Session ID:</strong></div>
+      <div class="col-8" th:text="${var.id}"></div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>Date:</strong></div>
+      <div class="col-8" th:text="${var.date}"></div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>Start Time:</strong></div>
+      <div class="col-8" th:text="${var.startTime}"></div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>End Time:</strong></div>
+      <div class="col-8" th:text="${var.endTime}"></div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>Attended?:</strong></div>
+      <div class="col-8" th:text="${var.attendance}"></div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-4 text-end"><strong>Member:</strong></div>
+      <div class="col-8" th:text="${var.member.username}"></div>
+    </div>
+  </div>
+
+  <form th:action="@{/trainer/deletesession}" method="post" class="text-center">
+    <input type="hidden" name="sessionId" th:value="${var.id}">
+    <button type="submit" class="btn custom-btn me-2">Confirm Delete</button>
+    <a href="/trainer/sessions" class="btn custom-btn">Cancel</a>
+  </form>
+</div>
+</body>
+</html>

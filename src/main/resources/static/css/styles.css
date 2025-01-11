@@ -1,0 +1,98 @@
+/* The colour palette, made as variables for ease of use*/
+:root {
+
+    --soft-teal: #a7d8d6;
+    --peach: #ffad90;
+    --lavender: #b79fd1;
+    --mint-green: #a0e0a1;
+}
+
+body {
+    background-color: var(--soft-teal);
+}
+
+
+.container {
+    background-color: var(--lavender);
+    color: white;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    background-color: var(--peach);
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.custom-input {
+    background-color: var(--lavender);
+    color: white;
+    border: none;
+}
+
+.custom-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--mint-green);
+}
+
+.custom-btn {
+    background-color: var(--mint-green);
+    color: white;
+    border: none;
+}
+
+.custom-btn:hover {
+    background-color: var(--lavender);
+}
+
+h1 {
+    color: var(--peach);
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+a.btn {
+    background-color: var(--mint-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a.btn:hover {
+    background-color: var(--lavender);
+    color: white;
+}
+
+.table td {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container {
+    overflow-x: auto;
+}
+
+.table {
+    max-width: 100%;
+    table-layout: fixed;
+}
+
+.list-group-item {
+    background-color: var(--peach);
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
