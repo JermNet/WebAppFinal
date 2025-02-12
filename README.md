@@ -1,3 +1,6 @@
+# Video covering this project
+https://youtu.be/Y7IkTauN9tc
+
 # HOW TO RUN
 1. Install XAMPP (https://www.apachefriends.org/)
 2. Turn on "Apache" and "MySQL"
