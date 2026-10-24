@@ -4,6 +4,7 @@ import com.example.webappfinal.model.Member;
 import com.example.webappfinal.model.Shift;
 import com.example.webappfinal.model.Trainer;
 import com.example.webappfinal.model.User;
+import com.example.webappfinal.repository.UserRepository;
 import com.example.webappfinal.service.ShiftService;
 import com.example.webappfinal.service.TrainerService;
 import com.example.webappfinal.service.UserService;
@@ -16,6 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 // Controller for all admin-related things. Having the "@RequestMapping("/admin")" line is especially important for this (and the other account controllers) since only admins can access these due to logic had in WebSecurityConfig
@@ -25,13 +28,15 @@ public class AdminController {
     private final UserService userService;
     private final ShiftService shiftService;
     private final TrainerService trainerService;
+    private final UserRepository userRepository;
 
     // Autowire the services
     @Autowired
-    public AdminController(UserService userService, ShiftService shiftService, TrainerService trainerService) {
+    public AdminController(UserService userService, ShiftService shiftService, TrainerService trainerService, UserRepository userRepository, UserRepository userRepository1) {
         this.userService = userService;
         this.shiftService = shiftService;
         this.trainerService = trainerService;
+        this.userRepository = userRepository1;
     }
 
     // This group of get mappings simply serve the pages and that's it
